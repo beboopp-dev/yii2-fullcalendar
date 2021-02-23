@@ -1,6 +1,6 @@
 <?php
 
-namespace edofre\fullcalendar\models;
+namespace petersonsilvadejesus\fullcalendar\models;
 
 /**
  * Class Event

@@ -1,6 +1,6 @@
 <?php
 
-namespace edofre\fullcalendar;
+namespace petersonsilvadejesus\fullcalendar;
 
 /**
  * Class PrintAsset

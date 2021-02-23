@@ -1,5 +1,5 @@
 {
-  "name": "edofre/yii2-fullcalendar",
+  "name": "petersonsilvadejesus/yii2-fullcalendar",
   "description": "Yii2 widget for fullcalendar",
   "require": {
     "php": ">=5.5.0",
@@ -13,10 +13,14 @@
     "event",
     "calendar"
   ],
-  "homepage": "https://github.com/edofre/yii2-fullcalendar",
+  "homepage": "https://github.com/petersonsilvadejesus/yii2-fullcalendar",
   "type": "yii2-extension",
   "license": "MIT",
   "authors": [
+    {
+      "name": "Péterson Silva",
+      "email": "petersondejesus99@gmail.com"
+    },
     {
       "name": "Edo Freriks",
       "email": "edofre@gmail.com"
@@ -24,7 +28,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "edofre\\fullcalendar\\": "src"
+      "petersonsilvadejesus\\fullcalendar\\": "src"
     }
   },
   "extra": {

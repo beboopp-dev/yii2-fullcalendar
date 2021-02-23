@@ -1,10 +1,10 @@
 <?php
 
-namespace edofre\fullcalendar;
+namespace petersonsilvadejesus\fullcalendar;
 
 /**
  * Class Fullcalendar
- * @package edofre\fullcalendar
+ * @package petersonsilvadejesus\fullcalendar
  */
 class Fullcalendar extends \yii\base\Widget
 {
