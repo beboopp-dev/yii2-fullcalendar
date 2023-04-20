@@ -68,24 +68,35 @@ class DraggableEvents extends \yii\base\Widget {
 
 	private function showHtml(): string {
 
+		$draggableTitle = Yii::t( 'yii2fullcalendar', 'Draggable Events' );
+		$removeAfterDrop = Yii::t( 'yii2fullcalendar', 'Remove after drop' );
+		$createTitle = Yii::t( 'yii2fullcalendar', 'Create Event' );
+		$addButton = Yii::t( 'yii2fullcalendar', 'Add' );
+
+		$lunch = Yii::t( 'yii2fullcalendar', 'Lunch' );
+		$goHome = Yii::t( 'yii2fullcalendar', 'Go home' );
+		$doHomework = Yii::t( 'yii2fullcalendar', 'Do homework' );
+		$workOnUIDesign = Yii::t( 'yii2fullcalendar', 'Work on UI design' );
+		$sleep = Yii::t( 'yii2fullcalendar', 'Sleep tight' );
+
 		return <<< HTML
 
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title">Draggable Events</h4>
+					<h4 class="card-title">{$draggableTitle}</h4>
 				</div>
 				<div class="card-body">
 
 					<div id="external-events">
-						<div class="external-event bg-success ui-draggable ui-draggable-handle" style="position: relative; z-index: auto; left: 0px; top: 0px;">Lunch</div>
-						<div class="external-event bg-warning ui-draggable ui-draggable-handle" style="position: relative;">Go home</div>
-						<div class="external-event bg-info ui-draggable ui-draggable-handle" style="position: relative;">Do homework</div>
-						<div class="external-event bg-primary ui-draggable ui-draggable-handle" style="position: relative;">Work on UI design</div>
-						<div class="external-event bg-danger ui-draggable ui-draggable-handle" style="position: relative;">Sleep tight</div>
+						<div class="external-event bg-success ui-draggable ui-draggable-handle" style="position: relative; z-index: auto; left: 0px; top: 0px;">{$lunch}</div>
+						<div class="external-event bg-warning ui-draggable ui-draggable-handle" style="position: relative;">{$goHome}</div>
+						<div class="external-event bg-info ui-draggable ui-draggable-handle" style="position: relative;">{$doHomework}</div>
+						<div class="external-event bg-primary ui-draggable ui-draggable-handle" style="position: relative;">{$workOnUIDesign}</div>
+						<div class="external-event bg-danger ui-draggable ui-draggable-handle" style="position: relative;">{$sleep}</div>
 						<div class="checkbox">
 							<label for="drop-remove">
 								<input type="checkbox" id="drop-remove">
-								remove after drop
+								{$removeAfterDrop}
 							</label>
 						</div>
 					</div>
@@ -95,7 +106,7 @@ class DraggableEvents extends \yii\base\Widget {
 			<!-- /.card -->
 			<div class="card">
 				<div class="card-header">
-					<h3 class="card-title">Create Event</h3>
+					<h3 class="card-title">{$createTitle}</h3>
 				</div>
 				<div class="card-body">
 					<div class="btn-group" style="width: 100%; margin-bottom: 10px;">
@@ -112,7 +123,7 @@ class DraggableEvents extends \yii\base\Widget {
 						<input id="new-event" type="text" class="form-control" placeholder="Event Title">
 
 						<div class="input-group-append">
-							<button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+							<button id="add-new-event" type="button" class="btn btn-primary">{$addButton}</button>
 						</div>
 						<!-- /btn-group -->
 					</div>
