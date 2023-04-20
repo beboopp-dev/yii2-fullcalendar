@@ -22,8 +22,8 @@ class CoreAsset extends \yii\web\AssetBundle
     /** @var  array List of the dependencies this assets bundle requires */
     public $depends = [
         'yii\web\YiiAsset',
-        'ricgrangeia\fullcalendar\MomentAsset',
-        'ricgrangeia\fullcalendar\PrintAsset',
+		\ricgrangeia\fullcalendar\MomentAsset::class
+
     ];
     /**
      * @var  boolean
@@ -33,12 +33,12 @@ class CoreAsset extends \yii\web\AssetBundle
     public $googleCalendar = false;
     /** @var  array Required JS files for the fullcalendar */
     public $js = [
-        'plugins/index.global.min.js',
+        'plugins/fullcalendar/index.global.min.js',
     ];
     /** @var  string Language for the fullcalendar */
     public $language = 'pt-pt';
     /** @var  string Location of the fullcalendar distribution */
-    public $sourcePath = '@vendor/ricgrangeia/yii2-fullcalendar/dist';
+    public $sourcePath = '@vendor/ricgrangeia/yii2-fullcalendar/src/dist';
 
     /**
      * @inheritdoc
