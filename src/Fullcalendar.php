@@ -2,6 +2,9 @@
 
 namespace ricgrangeia\fullcalendar;
 
+
+use Yii;
+
 /**
  * Class Fullcalendar
  * @package ricgrangeia\fullcalendar
@@ -87,17 +90,10 @@ class Fullcalendar extends \yii\base\Widget {
 			ThemeAsset::register( $this->view );
 		}
 
-		//if (isset($this->options['language'])) {
-		//	$assets->language = $this->options['language'];
-		//}
+		if (isset($this->options['language'])) {
+			$assets->language = $this->options['language'];
+		}
 
-		//$assets->googleCalendar = $this->googleCalendar;
-		//$this->clientOptions['header'] = $this->header;
-
-
-		//$this->view->registerJs(implode("\n", [
-		//	"jQuery('#{$this->options['id']}').fullCalendar({$this->getClientOptions()});",
-		//]), \yii\web\View::POS_READY);
 
 		$this->view->registerJs( <<<JS
 				$(function () {
@@ -210,20 +206,18 @@ class Fullcalendar extends \yii\base\Widget {
 
 	private function echoButtonTranslation(): string {
 
-		return <<< TEXT
-			buttonText: {
-				today:	'Hoje',
-				year:   'Ano',
-				month:  'Mês',
-				week:   'Semana',
-				day:    'Dia',
-				list:   'Lista'
-			},
-		TEXT;
+		$buttonText = "buttonText: {";
+		$buttonText .= "	today:	'" . Yii::t( 'yii2fullcalendar', 'Today' ) . "',";
+		$buttonText .= "	year:	'" . Yii::t( 'yii2fullcalendar', 'Year' ) . "',";
+		$buttonText .= "	month:	'" . Yii::t( 'yii2fullcalendar', 'Month' ) . "',";
+		$buttonText .= "	week:	'" . Yii::t( 'yii2fullcalendar', 'Week' ) . "',";
+		$buttonText .= "	day:	'" . Yii::t( 'yii2fullcalendar', 'Day' ) . "',";
+		$buttonText .= "	list:	'" . Yii::t( 'yii2fullcalendar', 'List' ) . "',";
+		$buttonText .= "},";
+
+		return $buttonText;
 	}
 
-
-	
 
 	private function getEvents() {
 
@@ -280,7 +274,6 @@ class Fullcalendar extends \yii\base\Widget {
 		TEXT;
 
 	}
-
 
 
 	/**
