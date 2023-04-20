@@ -6,6 +6,8 @@
 
 namespace ricgrangeia\fullcalendar;
 
+use Yii;
+
 class DraggableEvents extends \yii\base\Widget {
 
 
