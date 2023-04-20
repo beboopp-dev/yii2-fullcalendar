@@ -1,4 +1,8 @@
 <?php
+/*
+ * @author Ricardo Grangeia Dias <ricardograngeia@gmail.com>
+ * @profile PHP Developer
+ */
 
 return [
 	'Today' => 'Hoje',
