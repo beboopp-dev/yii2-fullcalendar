@@ -11,7 +11,7 @@ return [
 	'Day' => 'Dia',
 	'List' => 'Lista',
 	'Year' => 'Ano',
-	'Add' => 'Add',
+	'Add' => 'Criar',
 	'Draggable Events' => 'Eventos Arrastáveis',
 	'Remove after drop' => 'Remover após soltar',
 	'Work on UI design' => 'Trabalhe no design da interface do usuário',
