@@ -6,4 +6,5 @@ return [
 	'Week' => 'Semana',
 	'Day' => 'Dia',
 	'List' => 'Lista',
+	'Year' => 'Ano',
 ];
