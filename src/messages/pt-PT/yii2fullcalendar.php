@@ -19,5 +19,6 @@ return [
 	'Do homework' => 'Fazer os trabalhos de casa',
 	'Create Event' => 'Criar Evento',
 	'Go home' => 'Ir para casa',
-	'Lunch' => 'Almoço'
+	'Lunch' => 'Almoço',
+	'Event Title' => 'Título do Evento'
 ];

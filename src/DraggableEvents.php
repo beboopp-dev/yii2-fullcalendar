@@ -73,6 +73,7 @@ class DraggableEvents extends \yii\base\Widget {
 		$draggableTitle = Yii::t( 'yii2fullcalendar', 'Draggable Events' );
 		$removeAfterDrop = Yii::t( 'yii2fullcalendar', 'Remove after drop' );
 		$createTitle = Yii::t( 'yii2fullcalendar', 'Create Event' );
+		$eventTitle = Yii::t( 'yii2fullcalendar', 'Event Title' );
 		$addButton = Yii::t( 'yii2fullcalendar', 'Add' );
 
 		$lunch = Yii::t( 'yii2fullcalendar', 'Lunch' );
@@ -122,7 +123,7 @@ class DraggableEvents extends \yii\base\Widget {
 					</div>
 					<!-- /btn-group -->
 					<div class="input-group">
-						<input id="new-event" type="text" class="form-control" placeholder="Event Title">
+						<input id="new-event" type="text" class="form-control" placeholder="{$eventTitle}">
 
 						<div class="input-group-append">
 							<button id="add-new-event" type="button" class="btn btn-primary">{$addButton}</button>
