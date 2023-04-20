@@ -1,10 +1,10 @@
 <?php
 
-namespace petersonsilvadejesus\fullcalendar;
+namespace ricgrangeia\fullcalendar;
 
 /**
  * Class CoreAsset
- * @package petersonsilvadejesus\fullcalendar
+ * @package ricgrangeia\fullcalendar
  */
 class CoreAsset extends \yii\web\AssetBundle
 {
@@ -22,8 +22,8 @@ class CoreAsset extends \yii\web\AssetBundle
     /** @var  array List of the dependencies this assets bundle requires */
     public $depends = [
         'yii\web\YiiAsset',
-        'petersonsilvadejesus\fullcalendar\MomentAsset',
-        'petersonsilvadejesus\fullcalendar\PrintAsset',
+        'ricgrangeia\fullcalendar\MomentAsset',
+        'ricgrangeia\fullcalendar\PrintAsset',
     ];
     /**
      * @var  boolean
@@ -33,13 +33,12 @@ class CoreAsset extends \yii\web\AssetBundle
     public $googleCalendar = false;
     /** @var  array Required JS files for the fullcalendar */
     public $js = [
-        'fullcalendar.js',
-        'locale-all.js',
+        'plugins/index.global.min.js',
     ];
     /** @var  string Language for the fullcalendar */
-    public $language = null;
+    public $language = 'pt-pt';
     /** @var  string Location of the fullcalendar distribution */
-    public $sourcePath = '@npm/fullcalendar/dist';
+    public $sourcePath = '@vendor/ricgrangeia/yii2-fullcalendar/dist';
 
     /**
      * @inheritdoc

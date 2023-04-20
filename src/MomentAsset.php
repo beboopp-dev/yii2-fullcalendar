@@ -1,10 +1,10 @@
 <?php
 
-namespace petersonsilvadejesus\fullcalendar;
+namespace ricgrangeia\fullcalendar;
 
 /**
  * Class MomentAsset
- * @package edofre\fullcalendar
+ * @package ricgrangeia\fullcalendar
  */
 class MomentAsset extends \yii\web\AssetBundle
 {

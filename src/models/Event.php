@@ -1,10 +1,10 @@
 <?php
 
-namespace petersonsilvadejesus\fullcalendar\models;
+namespace ricgrangeia\fullcalendar\models;
 
 /**
  * Class Event
- * @package edofre\fullcalendar\models
+ * @package ricgrangeia\fullcalendar\models
  */
 class Event extends CalendarModel
 {

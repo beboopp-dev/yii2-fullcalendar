@@ -1,10 +1,10 @@
 <?php
 
-namespace petersonsilvadejesus\fullcalendar\models;
+namespace ricgrangeia\fullcalendar\models;
 
 /**
  * Class CalendarModel
- * @package edofre\fullcalendar\models
+ * @package ricgrangeia\fullcalendar\models
  */
 class CalendarModel extends \yii\base\Model
 {

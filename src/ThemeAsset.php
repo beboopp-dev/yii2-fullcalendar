@@ -1,10 +1,10 @@
 <?php
 
-namespace petersonsilvadejesus\fullcalendar;
+namespace ricgrangeia\fullcalendar;
 
 /**
  * Class ThemeAsset
- * @package edofre\fullcalendar
+ * @package ricgrangeia\fullcalendar
  */
 class ThemeAsset extends \yii\web\AssetBundle
 {

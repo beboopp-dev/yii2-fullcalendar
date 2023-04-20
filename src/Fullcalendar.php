@@ -1,10 +1,10 @@
 <?php
 
-namespace petersonsilvadejesus\fullcalendar;
+namespace ricgrangeia\fullcalendar;
 
 /**
  * Class Fullcalendar
- * @package petersonsilvadejesus\fullcalendar
+ * @package ricgrangeia\fullcalendar
  */
 class Fullcalendar extends \yii\base\Widget
 {

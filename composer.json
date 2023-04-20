@@ -1,8 +1,8 @@
 {
-  "name": "petersonsilvadejesus/yii2-fullcalendar",
+  "name": "ricgrangeia/yii2-fullcalendar",
   "description": "Yii2 widget for fullcalendar",
   "require": {
-    "php": ">=5.5.0",
+    "php": ">=8.0",
     "yiisoft/yii2": ">=2.0.9",
     "yiisoft/yii2-jui": ">=2.0.6",
     "npm-asset/fullcalendar": "v3.8.0"
@@ -13,22 +13,26 @@
     "event",
     "calendar"
   ],
-  "homepage": "https://github.com/petersonsilvadejesus/yii2-fullcalendar",
+  "homepage": "https://github.com/ricgrangeia/yii2-fullcalendar",
   "type": "yii2-extension",
   "license": "MIT",
   "authors": [
+    {
+      "name": "Ricardo Grangeia",
+      "email": "ricardograngeia@gmail.com"
+    },
     {
       "name": "Péterson Silva",
       "email": "petersondejesus99@gmail.com"
     },
     {
       "name": "Edo Freriks",
-      "email": "edofre@gmail.com"
+      "email": "ricgrangeia@gmail.com"
     }
   ],
   "autoload": {
     "psr-4": {
-      "petersonsilvadejesus\\fullcalendar\\": "src"
+      "ricgrangeia\\fullcalendar\\": "src"
     }
   },
   "extra": {
