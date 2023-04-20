@@ -33,10 +33,5 @@
     "psr-4": {
       "ricgrangeia\\fullcalendar\\": "src"
     }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "v1.0.0-stable"
-    }
   }
 }
