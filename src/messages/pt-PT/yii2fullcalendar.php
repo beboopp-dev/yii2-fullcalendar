@@ -20,5 +20,8 @@ return [
 	'Create Event' => 'Criar Evento',
 	'Go home' => 'Ir para casa',
 	'Lunch' => 'Almoço',
-	'Event Title' => 'Título do Evento'
+	'Event Title' => 'Título do Evento',
+	'Next' => 'Próximo',
+	'Previous' => 'Anterior',
+	'view' => 'vista',
 ];

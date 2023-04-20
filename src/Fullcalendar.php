@@ -211,12 +211,15 @@ class Fullcalendar extends \yii\base\Widget {
 	private function echoButtonTranslation(): string {
 
 		$buttonText = "buttonText: {";
+		$buttonText .= "	Previous:	'" . Yii::t( 'yii2fullcalendar', 'Previous' ) . "',";
+		$buttonText .= "	Next:	'" . Yii::t( 'yii2fullcalendar', 'Next' ) . "',";
 		$buttonText .= "	today:	'" . Yii::t( 'yii2fullcalendar', 'Today' ) . "',";
 		$buttonText .= "	year:	'" . Yii::t( 'yii2fullcalendar', 'Year' ) . "',";
 		$buttonText .= "	month:	'" . Yii::t( 'yii2fullcalendar', 'Month' ) . "',";
 		$buttonText .= "	week:	'" . Yii::t( 'yii2fullcalendar', 'Week' ) . "',";
 		$buttonText .= "	day:	'" . Yii::t( 'yii2fullcalendar', 'Day' ) . "',";
 		$buttonText .= "	list:	'" . Yii::t( 'yii2fullcalendar', 'List' ) . "',";
+		$buttonText .= "	view:	'" . Yii::t( 'yii2fullcalendar', 'view' ) . "',";
 		$buttonText .= "},";
 
 		return $buttonText;
