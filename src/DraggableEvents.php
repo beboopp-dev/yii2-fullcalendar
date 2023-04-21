@@ -13,13 +13,6 @@ class DraggableEvents extends \yii\base\Widget {
 
 	public function init() {
 
-		//if ( !isset( $this->options['id'] ) ) {
-		//	$this->options['id'] = $this->getId();
-		//}
-		//if ( !isset( $this->options['class'] ) ) {
-		//	$this->options['class'] = 'fullcalendar';
-		//}
-
 		parent::init();
 	}
 
@@ -29,10 +22,6 @@ class DraggableEvents extends \yii\base\Widget {
 	public function run() {
 
 		$assets = CoreAsset::register( $this->view );
-
-		//if ( $this->theme === true ) { // Register the theme
-		//	ThemeAsset::register( $this->view );
-		//}
 
 		echo $this->showHtml();
 
