@@ -37,7 +37,8 @@ class DraggableEvents extends \yii\base\Widget {
 		echo $this->showHtml();
 
 		$this->registerJs();
-
+		$this->registerColorChooserClick();
+		$this->registerEventClick();
 	}
 
 
