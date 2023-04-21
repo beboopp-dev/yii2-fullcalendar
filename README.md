@@ -22,57 +22,27 @@ or add
 "ricgrangeia/yii2-fullcalendar": "*"
 ```
 
-[//]: # (to the ```require``` section of your `composer.json` file.)
+## Main Features and Changes
 
-[//]: # ()
-[//]: # (## Usage)
-
-[//]: # (### Fullcalendar can be created as following, all options are optional, below is just an example of most options)
-
-[//]: # (```php)
-
-[//]: # (<?= ricgrangeia\fullcalendar\Fullcalendar::widget&#40;[)
-
-[//]: # (        'options'       => [)
-
-[//]: # (            'id'       => 'calendar',)
-
-[//]: # (            'language' => 'nl',)
-
-[//]: # (        ],)
-
-[//]: # (        'clientOptions' => [)
-
-[//]: # (            'weekNumbers' => true,)
-
-[//]: # (            'selectable'  => true,)
-
-[//]: # (            'defaultView' => 'agendaWeek',)
-
-[//]: # (            'eventResize' => new JsExpression&#40;")
-
-[//]: # (                function&#40;event, delta, revertFunc, jsEvent, ui, view&#41; {)
-
-[//]: # (                    console.log&#40;event&#41;;)
-
-[//]: # (                })
-
-[//]: # (            "&#41;,)
-
-[//]: # ()
-[//]: # (        ],)
-
-[//]: # (        'events'        => Url::to&#40;['calendar/events', 'id' => $uniqid]&#41;,)
-
-[//]: # (    ]&#41;;)
-
-[//]: # (?>)
-
-[//]: # (```)
+### Features
+* Extension for Yii2 Framework [Yii2](https://www.yiiframework.com/)
+* PHP 8.0 ready
+* Show events in a calendar [Fullcalendar.io](https://fullcalendar.io/)
+* Manual events add by drag and drop, also by clicking in the calendar
+* Has translations (incomplete)
+### Changes
+* v1.4.0 - Stable, but unorganized
 
 ### Events can be added in three ways, PHP array, Javascript array or JSON feed
 
-#### HTML with draggable events
+### View of the Calendar with draggable events
+#### Php Header
+```php
+use ricgrangeia\fullcalendar\Domain\Entity\Event;
+use ricgrangeia\fullcalendar\UI\Widget\Fullcalendar;
+use ricgrangeia\fullcalendar\UI\Widget\DraggableEvents;
+```
+#### Html Body
 ```html
 <!-- Main content -->
 <section class="content">
@@ -80,7 +50,7 @@ or add
         <div class="row">
             <div class="col-md-3">
                 <div class="sticky-top mb-3">
-                    <?= ricgrangeia\fullcalendar\DraggableEvents::widget() ?>
+                    <?= DraggableEvents::widget() ?>
                 </div>
             </div>
             <!-- /.col -->
@@ -152,396 +122,16 @@ or add
     ];
 ?>
 
-<?= ricgrangeia\fullcalendar\Fullcalendar::widget([
+<?= Fullcalendar::widget([
     'options' => [
-		'id' => 'calendar',
-		'language' => 'pt-PT',
-	],
+        // id of the div that will be replaced with the calendar
+        'id' => 'calendar',
+        'language' => 'pt-pt',
+        // Set Monday first day of the week, default is Sunday.
+        'firstDay' => Fullcalendar::MONDAY_FIRST,
+    ],
 	'events' => $events,
     ]);
 ?>
 ```
 
-[//]: # ()
-[//]: # (#### Javascript array)
-
-[//]: # (```php)
-
-[//]: # (<?= ricgrangeia\fullcalendar\Fullcalendar::widget&#40;[)
-
-[//]: # (       'events'        => new JsExpression&#40;'[)
-
-[//]: # (            {)
-
-[//]: # (                "id":null,)
-
-[//]: # (                "title":"Appointment #776",)
-
-[//]: # (                "allDay":false,)
-
-[//]: # (                "start":"2016-03-18T14:00:00",)
-
-[//]: # (                "end":null,)
-
-[//]: # (                "url":null,)
-
-[//]: # (                "className":null,)
-
-[//]: # (                "editable":false,)
-
-[//]: # (                "startEditable":false,)
-
-[//]: # (                "durationEditable":false,)
-
-[//]: # (                "rendering":null,)
-
-[//]: # (                "overlap":true,)
-
-[//]: # (                "constraint":null,)
-
-[//]: # (                "source":null,)
-
-[//]: # (                "color":null,)
-
-[//]: # (                "backgroundColor":"grey",)
-
-[//]: # (                "borderColor":"black",)
-
-[//]: # (                "textColor":null)
-
-[//]: # (            },)
-
-[//]: # (            {)
-
-[//]: # (                "id":"56e74da126014",)
-
-[//]: # (                "title":"Appointment #928",)
-
-[//]: # (                "allDay":false,)
-
-[//]: # (                "start":"2016-03-17T12:30:00",)
-
-[//]: # (                "end":"2016-03-17T13:30:00",)
-
-[//]: # (                "url":null,)
-
-[//]: # (                "className":null,)
-
-[//]: # (                "editable":true,)
-
-[//]: # (                "startEditable":true,)
-
-[//]: # (                "durationEditable":true,)
-
-[//]: # (                "rendering":null,)
-
-[//]: # (                "overlap":true,)
-
-[//]: # (                "constraint":null,)
-
-[//]: # (                "source":null,)
-
-[//]: # (                "color":null,)
-
-[//]: # (                "backgroundColor":"grey",)
-
-[//]: # (                "borderColor":"black",)
-
-[//]: # (                "textColor":null)
-
-[//]: # (            },)
-
-[//]: # (            {)
-
-[//]: # (                "id":"56e74da126050",)
-
-[//]: # (                "title":"Appointment #197",)
-
-[//]: # (                "allDay":false,)
-
-[//]: # (                "start":"2016-03-17T15:30:00",)
-
-[//]: # (                "end":"2016-03-17T19:30:00",)
-
-[//]: # (                "url":null,)
-
-[//]: # (                "className":null,)
-
-[//]: # (                "editable":true,)
-
-[//]: # (                "startEditable":true,)
-
-[//]: # (                "durationEditable":true,)
-
-[//]: # (                "rendering":null,)
-
-[//]: # (                "overlap":false,)
-
-[//]: # (                "constraint":null,)
-
-[//]: # (                "source":null,)
-
-[//]: # (                "color":null,)
-
-[//]: # (                "backgroundColor":"grey",)
-
-[//]: # (                "borderColor":"black",)
-
-[//]: # (                "textColor":null)
-
-[//]: # (            },)
-
-[//]: # (            {)
-
-[//]: # (                "id":"56e74da126080",)
-
-[//]: # (                "title":"Appointment #537",)
-
-[//]: # (                "allDay":false,)
-
-[//]: # (                "start":"2016-03-16T11:00:00",)
-
-[//]: # (                "end":"2016-03-16T11:30:00",)
-
-[//]: # (                "url":null,)
-
-[//]: # (                "className":null,)
-
-[//]: # (                "editable":false,)
-
-[//]: # (                "startEditable":false,)
-
-[//]: # (                "durationEditable":true,)
-
-[//]: # (                "rendering":null,)
-
-[//]: # (                "overlap":true,)
-
-[//]: # (                "constraint":null,)
-
-[//]: # (                "source":null,)
-
-[//]: # (                "color":null,)
-
-[//]: # (                "backgroundColor":"grey",)
-
-[//]: # (                "borderColor":"black",)
-
-[//]: # (                "textColor":null)
-
-[//]: # (            },)
-
-[//]: # (            {)
-
-[//]: # (                "id":"56e74da1260a7",)
-
-[//]: # (                "title":"Appointment #465",)
-
-[//]: # (                "allDay":false,)
-
-[//]: # (                "start":"2016-03-15T14:00:00",)
-
-[//]: # (                "end":"2016-03-15T15:30:00",)
-
-[//]: # (                "url":null,)
-
-[//]: # (                "className":null,)
-
-[//]: # (                "editable":false,)
-
-[//]: # (                "startEditable":true,)
-
-[//]: # (                "durationEditable":false,)
-
-[//]: # (                "rendering":null,)
-
-[//]: # (                "overlap":true,)
-
-[//]: # (                "constraint":null,)
-
-[//]: # (                "source":null,)
-
-[//]: # (                "color":null,)
-
-[//]: # (                "backgroundColor":"grey",)
-
-[//]: # (                "borderColor":"black",)
-
-[//]: # (                "textColor":null)
-
-[//]: # (            },)
-
-[//]: # (        ]'&#41;,)
-
-[//]: # (    ]&#41;;)
-
-[//]: # (?>)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (#### JSON feed)
-
-[//]: # (```php)
-
-[//]: # (<?= ricgrangeia\fullcalendar\Fullcalendar::widget&#40;[)
-
-[//]: # (        'events'        => Url::to&#40;['calendar/events', 'id' => $uniqid]&#41;,)
-
-[//]: # (    ]&#41;;)
-
-[//]: # (?>)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (Your controller action would then return an array as following)
-
-[//]: # (```php)
-
-[//]: # (    /**)
-
-[//]: # (	 * @param $id)
-
-[//]: # (	 * @param $start)
-
-[//]: # (	 * @param $end)
-
-[//]: # (	 * @return array)
-
-[//]: # (	 */)
-
-[//]: # (	public function actionEvents&#40;$id, $start, $end&#41;)
-
-[//]: # (	{)
-
-[//]: # (		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;)
-
-[//]: # ()
-[//]: # (		return [)
-
-[//]: # (			// minimum)
-
-[//]: # (			new Event&#40;[)
-
-[//]: # (				'title' => 'Appointment #' . rand&#40;1, 999&#41;,)
-
-[//]: # (				'start' => '2016-03-18T14:00:00',)
-
-[//]: # (			]&#41;,)
-
-[//]: # (			// Everything editable)
-
-[//]: # (			new Event&#40;[)
-
-[//]: # (				'id'               => uniqid&#40;&#41;,)
-
-[//]: # (				'title'            => 'Appointment #' . rand&#40;1, 999&#41;,)
-
-[//]: # (				'start'            => '2016-03-17T12:30:00',)
-
-[//]: # (				'end'              => '2016-03-17T13:30:00',)
-
-[//]: # (				'editable'         => true,)
-
-[//]: # (				'startEditable'    => true,)
-
-[//]: # (				'durationEditable' => true,)
-
-[//]: # (			]&#41;,)
-
-[//]: # (			// No overlap)
-
-[//]: # (			new Event&#40;[)
-
-[//]: # (				'id'               => uniqid&#40;&#41;,)
-
-[//]: # (				'title'            => 'Appointment #' . rand&#40;1, 999&#41;,)
-
-[//]: # (				'start'            => '2016-03-17T15:30:00',)
-
-[//]: # (				'end'              => '2016-03-17T19:30:00',)
-
-[//]: # (				'overlap'          => false, // Overlap is default true)
-
-[//]: # (				'editable'         => true,)
-
-[//]: # (				'startEditable'    => true,)
-
-[//]: # (				'durationEditable' => true,)
-
-[//]: # (			]&#41;,)
-
-[//]: # (			// Only duration editable)
-
-[//]: # (			new Event&#40;[)
-
-[//]: # (				'id'               => uniqid&#40;&#41;,)
-
-[//]: # (				'title'            => 'Appointment #' . rand&#40;1, 999&#41;,)
-
-[//]: # (				'start'            => '2016-03-16T11:00:00',)
-
-[//]: # (				'end'              => '2016-03-16T11:30:00',)
-
-[//]: # (				'startEditable'    => false,)
-
-[//]: # (				'durationEditable' => true,)
-
-[//]: # (			]&#41;,)
-
-[//]: # (			// Only start editable)
-
-[//]: # (			new Event&#40;[)
-
-[//]: # (				'id'               => uniqid&#40;&#41;,)
-
-[//]: # (				'title'            => 'Appointment #' . rand&#40;1, 999&#41;,)
-
-[//]: # (				'start'            => '2016-03-15T14:00:00',)
-
-[//]: # (				'end'              => '2016-03-15T15:30:00',)
-
-[//]: # (				'startEditable'    => true,)
-
-[//]: # (				'durationEditable' => false,)
-
-[//]: # (			]&#41;,)
-
-[//]: # (		];)
-
-[//]: # (	})
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (### Callbacks)
-
-[//]: # ()
-[//]: # (Callbacks have to be wrapped in a JsExpression&#40;&#41; object. For example if you want to use the eventResize you would add the following to the fullcalendar clientOptions)
-
-[//]: # (```php)
-
-[//]: # (<?= ricgrangeia\fullcalendar\Fullcalendar::widget&#40;[)
-
-[//]: # (        'clientOptions' => [)
-
-[//]: # (            'eventResize' => new JsExpression&#40;")
-
-[//]: # (                function&#40;event, delta, revertFunc, jsEvent, ui, view&#41; {)
-
-[//]: # (                    console.log&#40;event.id&#41;;)
-
-[//]: # (                    console.log&#40;delta&#41;;)
-
-[//]: # (                })
-
-[//]: # (            "&#41;,)
-
-[//]: # (        ],)
-
-[//]: # (    ]&#41;;)
-
-[//]: # (?>)
-
-[//]: # (```)
