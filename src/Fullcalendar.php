@@ -1,10 +1,7 @@
 <?php
-/*
- * @author Ricardo Grangeia Dias <ricardograngeia@gmail.com>
- * @profile PHP Developer
- */
 
 namespace ricgrangeia\fullcalendar;
+
 
 
 use Yii;
@@ -14,6 +11,10 @@ use Yii;
  * @package ricgrangeia\fullcalendar
  */
 class Fullcalendar extends \yii\base\Widget {
+
+	const SUNDAY_FIRST = 0;
+	const MONDAY_FIRST = 1;
+
 	/**
 	 * @var array  The fullcalendar options, for all available options check http://fullcalendar.io/docs/
 	 */
@@ -60,6 +61,8 @@ class Fullcalendar extends \yii\base\Widget {
 	public $options = [
 		'id' => 'calendar',
 		'class' => 'fullcalendar',
+		'firstDay' => self::SUNDAY_FIRST,
+		'language' => 'en'
 	];
 	/**
 	 * @var boolean  Whether or not we need to include the ThemeAsset bundle
@@ -76,6 +79,12 @@ class Fullcalendar extends \yii\base\Widget {
 		}
 		if ( !isset( $this->options['class'] ) ) {
 			$this->options['class'] = 'fullcalendar';
+		}
+		if ( !isset( $this->options['firstDay'] ) ) {
+			$this->options['firstDay'] = self::SUNDAY_FIRST;
+		}
+		if ( !isset( $this->options['language'] ) ) {
+			$this->options['language'] = 'en';
 		}
 
 		parent::init();
@@ -150,7 +159,9 @@ class Fullcalendar extends \yii\base\Widget {
 			
 			
 					var calendar = new Calendar(calendarEl, {
-						locale: 'pt-pt',
+						 height: '100%',
+						locale: '{$this->options['language']}',
+						firstDay: '{$this->options['firstDay']}',
 						weekNumbers: true,
 						initialView: 'dayGridMonth',
 						multiMonthMaxColumns: 1, // force a single column
@@ -211,15 +222,12 @@ class Fullcalendar extends \yii\base\Widget {
 	private function echoButtonTranslation(): string {
 
 		$buttonText = "buttonText: {";
-		$buttonText .= "	Previous:	'" . Yii::t( 'yii2fullcalendar', 'Previous' ) . "',";
-		$buttonText .= "	Next:	'" . Yii::t( 'yii2fullcalendar', 'Next' ) . "',";
 		$buttonText .= "	today:	'" . Yii::t( 'yii2fullcalendar', 'Today' ) . "',";
 		$buttonText .= "	year:	'" . Yii::t( 'yii2fullcalendar', 'Year' ) . "',";
 		$buttonText .= "	month:	'" . Yii::t( 'yii2fullcalendar', 'Month' ) . "',";
 		$buttonText .= "	week:	'" . Yii::t( 'yii2fullcalendar', 'Week' ) . "',";
 		$buttonText .= "	day:	'" . Yii::t( 'yii2fullcalendar', 'Day' ) . "',";
 		$buttonText .= "	list:	'" . Yii::t( 'yii2fullcalendar', 'List' ) . "',";
-		$buttonText .= "	view:	'" . Yii::t( 'yii2fullcalendar', 'view' ) . "',";
 		$buttonText .= "},";
 
 		return $buttonText;
