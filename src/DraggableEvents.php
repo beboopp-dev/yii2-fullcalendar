@@ -37,8 +37,6 @@ class DraggableEvents extends \yii\base\Widget {
 		echo $this->showHtml();
 
 		$this->registerJs();
-		$this->registerColorChooserClick();
-		$this->registerEventClick();
 
 	}
 
@@ -47,7 +45,7 @@ class DraggableEvents extends \yii\base\Widget {
 
 		$this->view->registerJs( <<< JS
 			
-			 document.addEventListener('DOMContentLoaded', function() {
+			$(function () {
 				
 				var containerEl = document.getElementById('external-events');
 				
@@ -152,7 +150,7 @@ class DraggableEvents extends \yii\base\Widget {
 
 		$this->view->registerJs( <<< JS
 		
-			 document.addEventListener('DOMContentLoaded', function() {
+			$(function () {
 				{$this->defaultColor()}
 			
 				$('#color-chooser > li > a').click(function (e) {
@@ -173,7 +171,7 @@ class DraggableEvents extends \yii\base\Widget {
 	private function registerEventClick(): void {
 
 		$this->view->registerJs( <<< JS
-			 document.addEventListener('DOMContentLoaded', function() {
+			$(function () {
 				{$this->defaultColor()}
 				
 				$('#add-new-event').click(function (e) {

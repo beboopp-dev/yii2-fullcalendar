@@ -109,7 +109,7 @@ class Fullcalendar extends \yii\base\Widget {
 
 
 		$this->view->registerJs( <<<JS
-				 document.addEventListener('DOMContentLoaded', function() {
+				$(function () {
 			
 					/* initialize the external events
 					 -----------------------------------------------------------------*/
