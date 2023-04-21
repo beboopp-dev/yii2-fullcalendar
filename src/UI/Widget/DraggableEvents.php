@@ -7,6 +7,7 @@
 namespace ricgrangeia\fullcalendar\UI\Widget;
 
 use Yii;
+use yii\web\View;
 use yii\base\Widget;
 use ricgrangeia\fullcalendar\Application\Assets\CoreAsset;
 
@@ -69,7 +70,7 @@ class DraggableEvents extends Widget {
 				});
 			})
 			
-		JS, \yii\web\View::POS_READY );
+		JS, View::POS_READY );
 
 	}
 
@@ -169,7 +170,7 @@ class DraggableEvents extends Widget {
 					})
 				})
 			})
-		JS, \yii\web\View::POS_READY );
+		JS, View::POS_READY );
 	}
 
 
@@ -204,7 +205,7 @@ class DraggableEvents extends Widget {
 					$('#new-event').val('')
 				})
 			})
-		JS, \yii\web\View::POS_READY );
+		JS, View::POS_READY );
 
 	}
 

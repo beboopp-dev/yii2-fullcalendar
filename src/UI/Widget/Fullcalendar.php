@@ -15,6 +15,7 @@ use Yii;
 use yii\helpers\Json;
 use yii\helpers\Html;
 use yii\web\JsExpression;
+use \yii\base\Widget;
 use ricgrangeia\fullcalendar\Application\Assets\CoreAsset;
 use ricgrangeia\fullcalendar\Application\Assets\ThemeAsset;
 
@@ -22,7 +23,7 @@ use ricgrangeia\fullcalendar\Application\Assets\ThemeAsset;
  * Class Fullcalendar
  * @package ricgrangeia\fullcalendar
  */
-class Fullcalendar extends \yii\base\Widget {
+class Fullcalendar extends Widget {
 
 	const SUNDAY_FIRST = 0;
 	const MONDAY_FIRST = 1;
