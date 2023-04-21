@@ -36,7 +36,7 @@ class CoreAsset extends \yii\web\AssetBundle
 	/** @var  array Required JS files for the fullcalendar */
 	public $js = [
 		'plugins/fullcalendar/index.global.min.js',
-		'plugins/fullcalendar/locales-all.global.min.js',
+		// 'plugins/fullcalendar/locales-all.global.min.js',
 
 
 	];
